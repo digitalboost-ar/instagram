@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>thisdrugs1 | Telegram</title>
+    <!-- Iconos oficiales de FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            --telegram-blue: #24A1DE;
+            --telegram-hover: #1d82b3;
+            --glass-bg: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background: var(--bg-gradient);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Elementos de fondo modernos (luces de neón difuminadas) */
+        body::before, body::after {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: var(--telegram-blue);
+            filter: blur(120px);
+            opacity: 0.15;
+            z-index: 0;
+        }
+        body::before { top: -50px; left: -50px; }
+        body::after { bottom: -50px; right: -50px; }
+
+        .card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            padding: 40px 30px;
+            border-radius: 24px;
+            width: 100%;
+            max-width: 420px;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            z-index: 1;
+            transform: translateY(0);
+            transition: all 0.4s ease;
+        }
+
+        .card:hover {
+            border-color: rgba(36, 161, 222, 0.3);
+            box-shadow: 0 25px 50px rgba(36, 161, 222, 0.1);
+        }
+
+        .avatar-container {
+            position: relative;
+            width: 110px;
+            height: 110px;
+            margin: 0 auto 25px;
+        }
+
+        .avatar {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #2aabee 0%, #229ed9 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 50px;
+            color: white;
+            box-shadow: 0 8px 24px rgba(36, 161, 222, 0.3);
+        }
+
+        .badge {
+            position: absolute;
+            bottom: 5px;
+            right: 5px;
+            background: #2ecc71;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            border: 3px solid #1e293b;
+            animation: pulse 2s infinite;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+        }
+
+        .username {
+            color: var(--telegram-blue);
+            font-size: 1rem;
+            font-weight: 500;
+            margin-bottom: 20px;
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .description {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 35px;
+        }
+
+        .btn-telegram {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            background: var(--telegram-blue);
+            color: white;
+            text-decoration: none;
+            padding: 16px 30px;
+            border-radius: 14px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            width: 100%;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 15px rgba(36, 161, 222, 0.3);
+        }
+
+        .btn-telegram:hover {
+            background: var(--telegram-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(36, 161, 222, 0.5);
+        }
+
+        .btn-telegram:active {
+            transform: translateY(1px);
+        }
+
+        .btn-telegram i {
+            font-size: 1.3rem;
+        }
+
+        .footer {
+            margin-top: 30px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            opacity: 0.6;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(46, 204, 113, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(46, 204, 113, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(46, 204, 113, 0); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <div class="avatar-container">
+            <div class="avatar">
+                <i class="fa-brands fa-telegram"></i>
+            </div>
+            <div class="badge" title="Online"></div>
+        </div>
+
+        <h1>Thisdrugs1</h1>
+        <a href="https://t.me/thisdrugs1" target="_blank" class="username">@thisdrugs1</a>
+        
+        <p class="description">
+            Bienvenido a nuestro sitio oficial. Para consultas, soporte o conectar directamente con nosotros, haz clic en el botón de abajo para abrir nuestro canal seguro de Telegram.
+        </p>
+
+        <a href="https://t.me/thisdrugs1" target="_blank" class="btn-telegram">
+            <i class="fa-brands fa-telegram"></i> Enviar Mensaje
+        </a>
+
+        <div class="footer">
+            &copy; 2026 Conectado vía Telegram Protocol
+        </div>
+    </div>
+
+</body>
+</html>
